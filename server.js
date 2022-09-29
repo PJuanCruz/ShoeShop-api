@@ -4,6 +4,7 @@ import connectDataBase from './config/mongodb.js';
 import morgan from 'morgan';
 import productRouter from './routes/products.js';
 import usersRouter from './routes/users.js';
+import orderRouter from './routes/order.js';
 import { errorHandler, notFound } from './middlewares/errors.js';
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(morgan('dev'));
 
 app.use('/api/products', productRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/orders', orderRouter);
 
 app.use(notFound);
 
